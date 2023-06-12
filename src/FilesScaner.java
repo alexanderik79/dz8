@@ -12,6 +12,7 @@ public class FilesScaner {
             {
             if(file.isDirectory()){
                 list.add("src/resources/"+file.getName()+"/");
+//                System.out.println(file.getName());
             }
         }
         // сканируем все файлы во всех директориях из списка list и закидываем их пути в fileList
@@ -22,11 +23,14 @@ public class FilesScaner {
                 if(files.isFile()){
                     fileList.add(list.get(i)+files.getName());
                 }
-                System.out.println(fileList.get(i));
             }
+        }
+        for (int i = 0; i < fileList.size(); i++) {
+            System.out.println(fileList.get(i));
         }
         // пробегаем по списку fileList читаем каждый файл и выводим в консоль
         for (int i = 0; i < fileList.size(); i++) {
+
             BufferedReader br = new BufferedReader(new FileReader(fileList.get(i)));
             String line;
             while ((line = br.readLine()) != null) {

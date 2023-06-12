@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class FraseCollector {
     public String collect (int j) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        for (int i = 1; i <= j; i++) {
-            System.out.println("Enter your frase #"+i);
+        for (int i = 2; i <= j; i=i+2) {
+            System.out.println("Enter your next fraze: ");
             String frase = scanner.nextLine();
             FileWriter writer = new FileWriter("src/resources/folder"+i+"/file"+i);
             writer.write(frase);
